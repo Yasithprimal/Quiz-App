@@ -1,7 +1,14 @@
+// import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart';
 
 class QuizQuestion {
-  QuizQuestion(this.text,this.answers);
+  QuizQuestion(this.text, this.answers);
 
   final String text;
   final List<String> answers;
+
+  List<String> getShuffledAnswers() {
+    final shuffledList = List.of(answers);
+    shuffledList.shuffle();
+    return shuffledList;
+  }
 }
